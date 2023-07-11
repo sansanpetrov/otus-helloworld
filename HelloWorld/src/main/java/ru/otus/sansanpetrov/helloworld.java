@@ -1,5 +1,7 @@
 package ru.otus.sansanpetrov;
 
+import java.util.Scanner;
+
 // Создаем класс helloworld
 public class helloworld {
 
@@ -9,12 +11,22 @@ public class helloworld {
         System.out.println("Hello\nWorld\nfrom\nJava\n"); // Выводим приветствие в консоль
         System.out.println("END of paragraph 1\n");
     }
-// Выполнение параграфа 2
-    public static void checkSign(int a, int b, int c) { //Создаем метод checkSum- сравнение суммы с нулем
+
+    // Выполнение параграфа 2
+    public static void checkSign() { //Создаем метод checkSum- сравнение суммы с нулем
         System.out.println("Paragraph 2\n");
 
-        int sum = a + b + c;   // Вычисляем сумму
+        // Числа изменяются случайным образом
+        int a = (int) (Math.random() * 10);
+        int b = (int) (Math.random() * (-20));
+        int c = (int) (Math.random() * 10);
+        // Печатаем значения a, b и c
+        System.out.println("a=" + a);
+        System.out.println("b=" + b);
+        System.out.println("c=" + c);
 
+        int sum = a + b + c;   // Вычисляем сумму
+        System.out.println("Sum=" + sum);    //Вывод значения
         //Далее сравниваем сумму с нулем и выводим результат сообщением в консоль
         if (sum >= 0) {
             System.out.println("Сумма положительная\n");
@@ -24,10 +36,13 @@ public class helloworld {
         }
 
     }
+
     //Выполнение параграфа 3
     public static void selectColor() {
         System.out.println("Paragraph 3\n");
-        int data = 21;
+
+        int data = (int) (Math.random() * 40); //Переменная меняется случайным образом
+        System.out.println("data=" + data);     // Вывод значения
         if (data <= 10) {                    // Сравниваем с 10 и выводим "Красный"
             System.out.println("Красный\n");
         }
@@ -45,8 +60,12 @@ public class helloworld {
     public static void compareNumbers() {
         System.out.println("Paragraph 4\n");
         // Объявляем переменные
-        int a= 23235;
-        int b= 10256;
+        int a = (int) (Math.random() * 1000);
+        int b = (int) (Math.random() * 1000);
+
+        // Выводим значения
+        System.out.println("a=" + a);
+        System.out.println("b=" + b);
 
         if (a >= b) {     // Сравниваем значения
             System.out.println("a>=b\n");
@@ -56,21 +75,45 @@ public class helloworld {
         System.out.println("END of paragraph 4\n");
     }
 
-    // Выполнение параграфа 5
-    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
-        System.out.println("Paragraph 5\n");
+    /*
+        // Выполнение параграфа 5
+        public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+            System.out.println("Paragraph 5\n");
 
 
 
 
-        System.out.println("END of paragraph 5\n");
-    }
-
-// Выполнение всех задач
+            System.out.println("END of paragraph 5\n");
+        }
+    */
+// Выполнение всех задач  в зависимости от выбора пользователя
     public static void main(String args[]) { // Создаем метод main (основной метод, тело программы)
+
+        // Выводим приглашение и ждем ввода цифры
+        System.out.println("Пожалуйста введите целое число от 1 до 5 и нажмите Enter:");
+        //  Вводим инструкции ожидания ввода пользователя
+            Scanner scanner = new Scanner(System.in);
+           int no = scanner.nextInt();
+
+        // Запускаем выбранный метод (программу)
+
+           if (no == 1) {
         greeting();
-        checkSign(3, 5, -10);
-selectColor();
-compareNumbers();
+         }
+          if (no == 2) {
+        checkSign();
+          }
+          if (no == 3) {
+        selectColor();
+          }
+           if (no == 4) {
+        compareNumbers();
+           }
+/*
+if (no == 5) {
+    addOrSubtractAndPrint();
+} */
+
     }
 }
+
