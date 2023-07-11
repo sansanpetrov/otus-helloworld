@@ -40,10 +40,37 @@ public class helloworld {
         System.out.println("END of paragraph 3\n");
     }
 
+    // Выполнение параграфа 4
+
+    public static void compareNumbers() {
+        System.out.println("Paragraph 4\n");
+        // Объявляем переменные
+        int a= 23235;
+        int b= 10256;
+
+        if (a >= b) {     // Сравниваем значения
+            System.out.println("a>=b\n");
+        } else {
+            System.out.println("a<b\n");
+        }
+        System.out.println("END of paragraph 4\n");
+    }
+
+    // Выполнение параграфа 5
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        System.out.println("Paragraph 5\n");
+
+
+
+
+        System.out.println("END of paragraph 5\n");
+    }
+
 // Выполнение всех задач
     public static void main(String args[]) { // Создаем метод main (основной метод, тело программы)
         greeting();
         checkSign(3, 5, -10);
 selectColor();
+compareNumbers();
     }
 }
