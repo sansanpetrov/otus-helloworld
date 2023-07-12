@@ -2,8 +2,8 @@ package ru.otus.sansanpetrov;
 
 import java.util.Scanner;
 
-// Создаем класс helloworld
-public class helloworld {
+// Создаем класс HelloWorld
+public class HelloWorld {
 
     //Выполнение параграфа 1
     public static void greeting() { //Создаем метод greeting- вывод приветствия
@@ -87,7 +87,7 @@ public class helloworld {
 
         // Определяем действия
 
-        if (increment == true) {
+        if (increment) {
             System.out.println("Сумма переменных = " + (initValue + delta));
         } else {
             System.out.println("Разность переменных = " + (initValue - delta));
@@ -100,8 +100,9 @@ public class helloworld {
     public static void main(String args[]) { // Создаем метод main (основной метод, тело программы)
 
         // Выводим приглашение и ждем ввода цифры
+        //  Вводим инструкции ожидания ввода пользователя.
+
         System.out.println("Пожалуйста введите целое число от 1 до 5 и нажмите Enter:");
-        //  Вводим инструкции ожидания ввода пользователя
         Scanner scanner = new Scanner(System.in);
         int no = scanner.nextInt();
 
