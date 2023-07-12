@@ -59,7 +59,7 @@ public class helloworld {
 
     public static void compareNumbers() {
         System.out.println("Paragraph 4\n");
-        // Объявляем переменные
+        // Объявляем переменные, значение определяем с помощью генератора
         int a = (int) (Math.random() * 1000);
         int b = (int) (Math.random() * 1000);
 
@@ -75,45 +75,53 @@ public class helloworld {
         System.out.println("END of paragraph 4\n");
     }
 
-    /*
-        // Выполнение параграфа 5
-        public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
-            System.out.println("Paragraph 5\n");
+    // Выполнение параграфа 5
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        System.out.println("Paragraph 5\n");
 
+        // Печатаем значение increment и переменных
 
+        System.out.println("Increment = " + increment);
+        System.out.println("initValue = " + initValue);
+        System.out.println("delta = " + delta);
 
+        // Определяем действия
 
-            System.out.println("END of paragraph 5\n");
+        if (increment == true) {
+            System.out.println("Сумма переменных = " + (initValue + delta));
+        } else {
+            System.out.println("Разность переменных = " + (initValue - delta));
         }
-    */
-// Выполнение всех задач  в зависимости от выбора пользователя
+
+        System.out.println("END of paragraph 5\n");
+    }
+
+    // Выполнение всех задач  в зависимости от выбора пользователя
     public static void main(String args[]) { // Создаем метод main (основной метод, тело программы)
 
         // Выводим приглашение и ждем ввода цифры
         System.out.println("Пожалуйста введите целое число от 1 до 5 и нажмите Enter:");
         //  Вводим инструкции ожидания ввода пользователя
-            Scanner scanner = new Scanner(System.in);
-           int no = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int no = scanner.nextInt();
 
         // Запускаем выбранный метод (программу)
 
-           if (no == 1) {
-        greeting();
-         }
-          if (no == 2) {
-        checkSign();
-          }
-          if (no == 3) {
-        selectColor();
-          }
-           if (no == 4) {
-        compareNumbers();
-           }
-/*
-if (no == 5) {
-    addOrSubtractAndPrint();
-} */
-
+        if (no == 1) {
+            greeting();
+        }
+        if (no == 2) {
+            checkSign();
+        }
+        if (no == 3) {
+            selectColor();
+        }
+        if (no == 4) {
+            compareNumbers();
+        }
+        if (no == 5) {
+            addOrSubtractAndPrint((int) (Math.random() * 1000), (int) (Math.random() * 1000), ((int) (Math.random() * 1000)) >= (int) (Math.random() * 1000));
+        }
     }
 }
 
