@@ -101,11 +101,17 @@ public class HelloWorld {
 
         // Выводим приглашение и ждем ввода цифры
         //  Вводим инструкции ожидания ввода пользователя.
-
+        int no = 0;
         System.out.println("Пожалуйста введите целое число от 1 до 5 и нажмите Enter:");
         Scanner scanner = new Scanner(System.in);
-        int no = scanner.nextInt();
-
+        // Проверяем, что ввденное число от 1 до 5
+        while (true) {
+            no = scanner.nextInt();
+            System.out.println("Число неправильное. Введите число еще раз.");
+            if (no > 0 && no < 6) {
+                break;
+            }
+        }
         // Запускаем выбранный метод (программу)
 
         if (no == 1) {
