@@ -56,6 +56,20 @@ public class Hw2Massive {
         System.out.println("Значения массива equal: " + Arrays.toString(equal));
     }
 
+    // Выполняем пункт № 4
+    public static void plusOneMore() {
+        int onemore = 25;
+        int onemoreplus = 4;
+int[] plus = new int[25];
+        for (int i = 0; i < 25; i++) {
+            plus[i] = onemore;
+        }
+for (int i=0; i < 25; i++) {
+    plus[i] = plus[i] + onemoreplus;
+}
+        System.out.println("Значения массива plus: " + Arrays.toString(plus));
+    }
+
     // Запускаем основную программу со всеми методами по очереди:
     public static void main(String args[]) {
         // Начинаем выполнение второго домашнего задания.
@@ -79,8 +93,15 @@ public class Hw2Massive {
         System.out.println("END of paragraph 3.");
         System.out.println();
 
+        // Выводим метод четвертого параграфа:
+        System.out.println("Выполнение пункта 4.");
+        plusOneMore();
+        System.out.println("END of paragraph 4.");
+        System.out.println();
+
+
         // Выводим сообщение о завершении выполнения ДЗ № 2.
-        System.out.println("Домашнее задание № 2 закончено..");
+        System.out.println("Домашнее задание № 2 закончено.");
         System.out.println();
     }
 }
