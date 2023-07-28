@@ -60,14 +60,41 @@ public class Hw2Massive {
     public static void plusOneMore() {
         int onemore = 25;
         int onemoreplus = 4;
-int[] plus = new int[25];
+        int[] plus = new int[25];
         for (int i = 0; i < 25; i++) {
             plus[i] = onemore;
         }
-for (int i=0; i < 25; i++) {
-    plus[i] = plus[i] + onemoreplus;
-}
+        for (int i = 0; i < 25; i++) {
+            plus[i] = plus[i] + onemoreplus;
+        }
         System.out.println("Значения массива plus: " + Arrays.toString(plus));
+    }
+
+    // Выполняем пункт № 5
+    public static void halfMore() {
+        int sum1 = 0, sum2 =0; //Определяем начальные значения сумм половин элементов
+        int[] half= new int[20];
+        for (int i = 0; i < 20; i++) {
+            half[i] = (int) (Math.random() * 90);
+            if(i >=10) {
+                sum1 += half[i]; //Сумма первой половины элементов
+            }
+            if(i > 10 && i <= 20) {
+                sum2 += half[i]; //Сумма второй половины элементов
+            }
+        }
+        System.out.println("Массив half:" + Arrays.toString(half));
+        System.out.println("Значение sum1:" + sum1);
+        System.out.println("Значение sum2:" + sum2);
+        if (sum1 > sum2) {
+            System.out.println("Значение сумм элементов первой половины больше");
+        }
+        if (sum1 < sum2) {
+            System.out.println("Значение сумм элементов второй половины больше");
+        }
+        if (sum1 == sum2) {
+            System.out.println("Значения сумм элементов первой и второй половин равны");
+        }
     }
 
     // Запускаем основную программу со всеми методами по очереди:
@@ -99,6 +126,11 @@ for (int i=0; i < 25; i++) {
         System.out.println("END of paragraph 4.");
         System.out.println();
 
+        // Выводим метод пятого параграфа:
+        System.out.println("Выполнение пункта 5.");
+        halfMore();
+        System.out.println("END of paragraph 5.");
+        System.out.println();
 
         // Выводим сообщение о завершении выполнения ДЗ № 2.
         System.out.println("Домашнее задание № 2 закончено.");
