@@ -1,4 +1,4 @@
-package ru.otus.sansanpetrov.HomeWork2;
+package ru.otus.sansanpetrov.homework2;
 
 import java.util.Scanner;
 import java.util.Arrays;
