@@ -41,7 +41,7 @@ public class Hw2Massive {
     // Выполняем пункт № 4
     public static void plusOneMore(int oneMorePlus, int[] plus) {
         for (int i = 0; i < plus.length; i++) {
-    //        plus[i] = plus[i] + oneMorePlus;
+            //        plus[i] = plus[i] + oneMorePlus;
             plus[i] += oneMorePlus;
         }
         System.out.println("Значения массива plus: " + Arrays.toString(plus));
@@ -49,13 +49,13 @@ public class Hw2Massive {
 
     // Выполняем пункт № 5
     public static void halfMore(int[] half) {
-        int sum1 = 0, sum2 =0; //Определяем начальные значения сумм половин элементов
+        int sum1 = 0, sum2 = 0; //Определяем начальные значения сумм половин элементов
         for (int i = 0; i < half.length; i++) {
             half[i] = (int) (Math.random() * 90);
-            if(i <= half.length / 2) {
+            if (i <= half.length / 2) {
                 sum1 += half[i]; //Сумма первой половины элементов
             }
-            if(i > half.length /2 && i <= half.length) {
+            if (i > half.length / 2 && i <= half.length) {
                 sum2 += half[i]; //Сумма второй половины элементов
             }
         }
@@ -86,25 +86,25 @@ public class Hw2Massive {
 
         // Выводим метод второго параграфа
         System.out.println("Выполнение пункта 2.");
-        sumArrayMore5(new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
+        sumArrayMore5(new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
         System.out.println("END of paragraph 2.");
         System.out.println();
 
         // Выводим метод третьего параграфа:
         System.out.println("Выполнение пункта 3.");
-        integerEqual(33, new int[] {3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
+        integerEqual(33, new int[]{3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
         System.out.println("END of paragraph 3.");
         System.out.println();
 
         // Выводим метод четвертого параграфа:
         System.out.println("Выполнение пункта 4.");
-        plusOneMore(45, new int[] {3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
+        plusOneMore(45, new int[]{3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
         System.out.println("END of paragraph 4.");
         System.out.println();
 
         // Выводим метод пятого параграфа:
         System.out.println("Выполнение пункта 5.");
-        halfMore(new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
+        halfMore(new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
         System.out.println("END of paragraph 5.");
         System.out.println();
 
