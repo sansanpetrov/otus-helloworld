@@ -6,36 +6,20 @@ import java.util.Arrays;
 // Создаем класс с Домашним заданием № 2
 public class Hw2Massive {
 
-    public static void printString() {
-        // Выполняем пункт № 1. Применяем генератор случайных чисел.
-        // В качестве множителя принимаем ввод числа от пользователя.
-
-        // Вводим переменную для ввода выборов пользователя:
-        int input = 0;
-        System.out.println("Пожалуйста введите целое число и нажмите Enter:");
-        Scanner scanner = new Scanner(System.in);
-        input = scanner.nextInt();
-        int j = (int) (Math.random() * input);
-        int[] array = new int[j];
-        for (int i = 0; i < j; i++) {
-            System.out.println(Arrays.toString(array));
+    public static void printString(int numberOfString, String ofString) {
+        // Выполняем пункт № 1.
+        for (int i = 0; i < numberOfString; i++) {
+            System.out.println(ofString);
         }
-
     }
 
-    public static void sumArrayMore5() {
+    public static void sumArrayMore5(int[] vector) {
         // Выполняем пункт № 2.
-        int input = 0;
-        System.out.println("Пожалуйста введите целое число и нажмите Enter:");
-        Scanner scanner = new Scanner(System.in);
-        input = scanner.nextInt();
-        int[] vector = new int[input];
-
         // Заполняем значения массива случайными числами и вычисляем сумму элементов,
         // значение которых больше 5-ти
         int sum = 0;
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = (int) (Math.random() * input);
+            vector[i] = (int) (Math.random() * 10);
         }
         for (int i = 0; i < vector.length; i++) {
             if (vector[i] > 5) {
@@ -43,43 +27,35 @@ public class Hw2Massive {
             }
         }
         System.out.println("Созданный массив: " + Arrays.toString(vector));
-        System.out.println("Сумма элементов массива с индексом больше 5: " + sum);
+        System.out.println("Сумма элементов массива, значене которых больше 5: " + sum);
     }
 
     // Выполняем пункт № 3
-    public static void integerEqual() {
-        int integer = 33;
-        int[] equal = new int[25];
-        for (int i = 0; i < 25; i++) {
-            equal[i] = integer;
+    public static void integerEqual(int integer, int[] mass) {
+        for (int i = 0; i < mass.length; i++) {
+            mass[i] = integer;
         }
-        System.out.println("Значения массива equal: " + Arrays.toString(equal));
+        System.out.println("Значения массива mass: " + Arrays.toString(mass));
     }
 
     // Выполняем пункт № 4
-    public static void plusOneMore() {
-        int onemore = 25;
-        int onemoreplus = 4;
-        int[] plus = new int[25];
-        for (int i = 0; i < 25; i++) {
-            plus[i] = onemore;
-        }
-        for (int i = 0; i < 25; i++) {
-            plus[i] = plus[i] + onemoreplus;
+    public static void plusOneMore(int oneMorePlus, int[] plus) {
+        for (int i = 0; i < plus.length; i++) {
+    //        plus[i] = plus[i] + oneMorePlus;
+            plus[i] += oneMorePlus;
         }
         System.out.println("Значения массива plus: " + Arrays.toString(plus));
     }
 
     // Выполняем пункт № 5
-    public static void halfMore() {
+    public static void halfMore(int[] half) {
         int sum1 = 0, sum2 =0; //Определяем начальные значения сумм половин элементов
-        int[] half= new int[20];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < half.length; i++) {
             half[i] = (int) (Math.random() * 90);
-            if(i >=10) {
+            if(i <= half.length / 2) {
                 sum1 += half[i]; //Сумма первой половины элементов
             }
-            if(i > 10 && i <= 20) {
+            if(i > half.length /2 && i <= half.length) {
                 sum2 += half[i]; //Сумма второй половины элементов
             }
         }
@@ -104,31 +80,31 @@ public class Hw2Massive {
 
         // Выводим метод первого параграфа
         System.out.println("Выполнение пункта 1.");
-        printString();
+        printString(25, "Печать строки");
         System.out.println("END of paragraph 1.");
         System.out.println();
 
         // Выводим метод второго параграфа
         System.out.println("Выполнение пункта 2.");
-        sumArrayMore5();
+        sumArrayMore5(new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
         System.out.println("END of paragraph 2.");
         System.out.println();
 
         // Выводим метод третьего параграфа:
         System.out.println("Выполнение пункта 3.");
-        integerEqual();
+        integerEqual(33, new int[] {3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
         System.out.println("END of paragraph 3.");
         System.out.println();
 
         // Выводим метод четвертого параграфа:
         System.out.println("Выполнение пункта 4.");
-        plusOneMore();
+        plusOneMore(45, new int[] {3, 2, 1, 77, 45, 25, 10, 15, 234, 0});
         System.out.println("END of paragraph 4.");
         System.out.println();
 
         // Выводим метод пятого параграфа:
         System.out.println("Выполнение пункта 5.");
-        halfMore();
+        halfMore(new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
         System.out.println("END of paragraph 5.");
         System.out.println();
 
