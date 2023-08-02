@@ -14,41 +14,60 @@ public class HomeWork3 {
         System.out.print("Сумма элементов массива больше нуля:" + sumOfPositive);
         System.out.println();
     }
-        //Метод, реализующий второй параграф задания
-        public static void squareStar(int size) {
-            char[][] squareStarrr = new char[size][size];
-            for (int i = 0; i < squareStarrr.length; i++) {
-                for (int j = 0; j < squareStarrr[i].length; j++) {
-                    squareStarrr[i][j] = '*';
-                }
-            }
-            for (int i = 0; i < squareStarrr.length; i++) {
-                for (int j = 0; j < squareStarrr[i].length; j++) {
-                    System.out.print(squareStarrr[i][j] + " ");
-                }
-                System.out.println();
-            }
-        }
 
-        //Метод, реализующий третий параграф задания
-public static void zeroDiag(int[][] zero) {
-  //     int[][] zero = new int[3][3];  - Не понимаю, как давать массивы на вход метода.
-    //     Работает только через new int[][]
-    for (int i = 0; i < zero.length; i++) {
-        for (int j = 0; j < zero[i].length; j++) {
-            if(i == j) {
-                zero[i][j] = 0;
+    //Метод, реализующий второй параграф задания
+    public static void squareStar(int size) {
+        char[][] squareStarrr = new char[size][size];
+        for (int i = 0; i < squareStarrr.length; i++) {
+            for (int j = 0; j < squareStarrr[i].length; j++) {
+                squareStarrr[i][j] = '*';
             }
-            System.out.print(zero[i][j] + " ");
         }
-        System.out.println();
+        for (int i = 0; i < squareStarrr.length; i++) {
+            for (int j = 0; j < squareStarrr[i].length; j++) {
+                System.out.print(squareStarrr[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
-}
 
-        //Метод, реализующий четвертый параграф задания
+    //Метод, реализующий третий параграф задания
+    public static void zeroDiag(int[][] zero) {
+        //     int[][] zero = new int[3][3];  - Не понимаю, как давать массивы на вход метода.
+        //     Работает только через new int[][]
+        for (int i = 0; i < zero.length; i++) {
+            for (int j = 0; j < zero[i].length; j++) {
+                if (i == j) {
+                    zero[i][j] = 0;
+                }
+                System.out.print(zero[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    //Метод, реализующий четвертый параграф задания
+    public static void findMax() {
+        int[][] big = new int[6][6];
+        int a = 0;
+        for (int i = 0; i < big.length; i++) {
+            for (int j = 0; j < big[i].length; j++) {
+                big[i][j] = (int) (Math.random() * 100);
+                System.out.print(big[i][j] + " ");
+                if (big[i][j] >= a) {
+                    a = big[i][j];
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("Наибольшее число:" + a);
+           System.out.println();
+        }
 
 
-        //Метод, реализующий пятый параграф задания
+
+
+    //Метод, реализующий пятый параграф задания
 
 
     public static void main(String[] args) {
@@ -66,13 +85,13 @@ public static void zeroDiag(int[][] zero) {
 
         // Выводим результаты третьего пункта задания:
         System.out.println("Третий пункт третьего задания:");
-zeroDiag(new int[][]{{25, 25, 25}, {25, 25, 25}, {25, 25, 25}});
+        zeroDiag(new int[][]{{25, 25, 25}, {25, 25, 25}, {25, 25, 25}});
         System.out.println("Конец выполнения третьего пункта.");
         System.out.println();
 
         // Выводим результаты четвертого пункта задания:
         System.out.println("Четвертый пункт третьего задания:");
-
+        findMax();
         System.out.println("Конец выполнения четвертого пункта.");
         System.out.println();
 
