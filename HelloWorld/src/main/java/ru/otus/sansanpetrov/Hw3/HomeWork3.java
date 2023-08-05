@@ -17,18 +17,13 @@ public class HomeWork3 {
 
     //Метод, реализующий второй параграф задания
     public static void squareStar(int size) {
-        char[][] squareStarrr = new char[size][size];
-        for (int i = 0; i < squareStarrr.length; i++) {
-            for (int j = 0; j < squareStarrr[i].length; j++) {
-                squareStarrr[i][j] = '*';
-            }
-        }
-        for (int i = 0; i < squareStarrr.length; i++) {
-            for (int j = 0; j < squareStarrr[i].length; j++) {
-                System.out.print(squareStarrr[i][j] + " ");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= (size - 1); j++) {
+                System.out.print("*" + " ");
             }
             System.out.println();
         }
+
     }
 
     //Метод, реализующий третий параграф задания
@@ -88,7 +83,7 @@ public class HomeWork3 {
 
         // Выводим результаты второго пункта задания:
         System.out.println("Второй пункт третьего задания:");
-        squareStar(8);
+        squareStar(6);
         System.out.println("Конец выполнения второго пункта.");
         System.out.println();
 
