@@ -1,4 +1,4 @@
-package ru.otus.sansanpetrov.hw3;
+package ru.otus.sansanpetrov.homework3;
 
 public class HomeWork3 {
     //Метод, реализующий первый параграф задания
@@ -62,7 +62,7 @@ public class HomeWork3 {
     //Метод, реализующий пятый параграф задания
     public static void sumSecondString(int[][] sSS) {
         int a = 0;
-        if (sSS[1].length >= 1) {
+        if (sSS.length >= 2) {
             for (int j = 0; j < sSS[1].length; j++) {
                 a += sSS[1][j];
             }
@@ -102,6 +102,8 @@ public class HomeWork3 {
         // Выводим результаты пятого пункта задания:
         System.out.println("Пятый пункт третьего задания:");
         sumSecondString(new int[][]{{26, 67, 128, 327}, {129, 998, 786, 1029}, {3289, 8888, 765, 2}, {238, 877, 887, 876}});
+        sumSecondString(new int[][]{{129, 998, 786, 1029}, {}});
+        sumSecondString(new int[][]{{129, 998, 786, 1029}});
         System.out.println("Конец выполнения пятого пункта.");
         System.out.println();
 
