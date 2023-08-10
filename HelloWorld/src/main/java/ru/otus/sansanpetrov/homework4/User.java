@@ -1,5 +1,7 @@
 package ru.otus.sansanpetrov.homework4;
 
+import java.time.Year;
+
 public class User {
     // Поля (переменные):
     private String family;
@@ -22,7 +24,7 @@ public class User {
         return family;
     }
 
-    public String setFamily(String family) {
+    public void setFamily(String family) {
         this.family = family;
     }
 
@@ -30,7 +32,7 @@ public class User {
         return name;
     }
 
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -38,23 +40,23 @@ public class User {
         return middleName;
     }
 
-    public String setMiddleName(String middleName) {
+    public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
 
-    public int getYearOfBithday() {
+    public int getYearOfBirthday() {
         return yearOfBirthday;
     }
 
-    public int setYearOfBithday(int yearOfBithday) {
-        this.yearOfBirthday = yearOfBithday;
+    public void setYearOfBithday(int yearOfBirthday) {
+        this.yearOfBirthday = yearOfBirthday;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 }
