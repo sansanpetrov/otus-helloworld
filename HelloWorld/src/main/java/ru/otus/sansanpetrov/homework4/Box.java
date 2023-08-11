@@ -74,21 +74,40 @@ public class Box {
     }
 
     // Открываем и закрываем коробку
-    public void openBox() {
+    public void openBox() {  // Открываем закрытую коробку
         if (!openClose) {
             openClose = true;
             System.out.println("Открыли коробку");
         } else {
             System.out.println("Коробка уже открыта");
         }
-        public void closeBox () {
-            if (openClose) {
-                openClose = false;
-                System.out.println("Закрыли коробку");
-            } else {
-                System.out.println("Коробка уже закрыта");
-            }
-        }
-        // Складываем и выкидываем предмет в/из коробки
-public void
     }
+
+    public void closeBox() { // Закрываем открытую коробку
+        if (openClose) {
+            openClose = false;
+            System.out.println("Закрыли коробку");
+        } else {
+            System.out.println("Коробка уже закрыта");
+        }
+    }
+
+    // Складываем и выкидываем предмет в/из открытой коробки
+    public void putThing() {   // Кладем предмет в пустую коробку
+        if (emptyFilled) {
+            emptyFilled = false;
+            System.out.println("Положили предмет в пустую коробку");
+        } else {
+            System.out.println("В коробке уже лежит предмет");
+        }
+    }
+
+    public void getThing() { // Берем предмет из заполненной коробки
+        if (!emptyFilled) {
+            emptyFilled = true;
+            System.out.println("Забрали предмет из коробку");
+        } else {
+            System.out.println("Коробка уже пустая");
+        }
+    }
+}
