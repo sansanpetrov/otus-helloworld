@@ -48,7 +48,7 @@ public class User {
         return yearOfBirthday;
     }
 
-    public void setYearOfBithday(int yearOfBirthday) {
+    public void setYearOfBirthday(int yearOfBirthday) {
         this.yearOfBirthday = yearOfBirthday;
     }
 
