@@ -6,13 +6,15 @@ public class Animal {
     int velocitySwim; // Скорость плавания в м/с
     int velocityRun; // Скорость бега в м/с
     int endurance; // Выносливость
+    int multi; // Множитель выносливости для плавания
 
     // Конструктор
-    public Animal(String name, int velocitySwim, int velocityRun, int endurance) {
+    public Animal(String name, int velocitySwim, int velocityRun, int endurance, int multi) {
         this.name = name;
         this.velocitySwim = velocitySwim;
         this.velocityRun = velocityRun;
         this.endurance = endurance;
+        this.multi = multi;
     }
 
     // getters / setters
@@ -46,26 +48,34 @@ public class Animal {
 
 // Методы животного
 
-    public void run(int distance) {
-        int timeRun;
-        if (endurance < 0) {
-            endurance = -1;
-        } else {
-            timeRun = distance / velocityRun;
-            System.out.println("Время, затраченное на преодоление дистанции бегом: " + timeRun + " секунд.");
-            endurance = endurance - distance;
+    public float run(int distance) {
+        if (endurance == -1) {
+            System.out.println("Нет сил бежать!");
+            return endurance;
         }
+        float timeRun = distance / velocityRun;
+            System.out.println("Время, затраченное на преодоление дистанции бегом: " + timeRun + " секунд.");
+        endurance -= distance;
+        if (endurance <= 0) {
+            endurance = -1;
+            System.out.println("Силы животного иссякли.");
+        }
+        return endurance;
     }
 
-    public void swim(int distance) {
-        int timeSwim;
-        if (endurance < 0) {
-            endurance = -1;
-        } else {
-            timeSwim = distance / velocitySwim;
-            System.out.println("Время, затраченное на преодоление дистанции вплавь: " + timeSwim + " секунд.");
-            endurance = endurance - distance;
+    public float swim(int distance) {
+        if (endurance == -1) {
+            System.out.println("Нет сил плыть!");
+            return endurance;
         }
+        float timeSwim = distance / velocitySwim;
+        System.out.println("Время, затраченное на преодоление дистанции вплавь: " + timeSwim + " секунд.");
+        endurance -= distance * multi;
+        if (endurance <= 0) {
+            endurance = -1;
+            System.out.println("Силы животного иссякли.");
+        }
+        return endurance;
     }
 
     public void info() {
