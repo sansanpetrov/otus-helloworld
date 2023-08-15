@@ -3,18 +3,18 @@ package ru.otus.sansanpetrov.homework5;
 public class Animal {
     // Поля
     String name; // Имя животного
-    int velocitySwim; // Скорость плавания в м/с
     int velocityRun; // Скорость бега в м/с
     int endurance; // Выносливость
-    int multi; // Множитель выносливости для плавания
+    int velocitySwim; // Скорость плавания в м/с
+    int multiplierSwim; // Множитель выносливости для плавания
 
     // Конструктор
-    public Animal(String name, int velocitySwim, int velocityRun, int endurance, int multi) {
+    public Animal(String name, int velocityRun, int velocitySwim, int endurance, int multiplierSwim) {
         this.name = name;
-        this.velocitySwim = velocitySwim;
         this.velocityRun = velocityRun;
         this.endurance = endurance;
-        this.multi = multi;
+        this.velocitySwim = velocitySwim;
+        this.multiplierSwim = multiplierSwim;
     }
 
     // getters / setters
@@ -24,14 +24,6 @@ public class Animal {
 
     public void setName() {
         System.out.println("Имя не меняется!");
-    }
-
-    public int getVelocitySwim() {
-        return velocitySwim;
-    }
-
-    public void setVelocitySwim() {
-        System.out.println("Скорость плавания не меняется!");
     }
 
     public int getVelocityRun() {
@@ -46,7 +38,20 @@ public class Animal {
         return endurance;
     }
 
-// Методы животного
+    public int getVelocitySwim() {
+        return velocitySwim;
+    }
+
+    public void setVelocitySwim(int velocitySwim) {
+        System.out.println("Скорость плавания не меняется!");
+    }
+    public int getMultiplierSwim() {
+        return multiplierSwim;
+    }
+    public void setMultiplierSwim(int multiplierSwim) {
+        System.out.println("Множитель усилий для плавания изменить нельзя!!");
+    }
+    // Методы животного
 
     public float run(int distance) {
         if (endurance == -1) {
@@ -70,7 +75,7 @@ public class Animal {
         }
         float timeSwim = distance / velocitySwim;
         System.out.println("Время, затраченное на преодоление дистанции вплавь: " + timeSwim + " секунд.");
-        endurance -= distance * multi;
+        endurance -= distance * multiplierSwim;
         if (endurance <= 0) {
             endurance = -1;
             System.out.println("Силы животного иссякли.");

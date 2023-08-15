@@ -1,7 +1,7 @@
 package ru.otus.sansanpetrov.homework5;
 
 public class Horse extends Animal {
-    public Horse(String name, int velocitySwim, int velocityRun, int endurance, int multi) {
-        super(name, velocitySwim, velocityRun, endurance, 4);
+    public Horse(String name, int velocityRun, int velocitySwim, int endurance, int multiplierSwim) {
+        super(name, velocityRun, velocitySwim, endurance, multiplierSwim);
     }
 }
