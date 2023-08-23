@@ -37,7 +37,7 @@ public class Plate {
     public void increaseFood(int amount) {
         foodVolumeCurrent += amount;
         if (foodVolumeCurrent >= foodVolumeMax) {
-            this.foodVolumeMax = 100;
+            foodVolumeCurrent = foodVolumeMax;
         }
     }
 }
