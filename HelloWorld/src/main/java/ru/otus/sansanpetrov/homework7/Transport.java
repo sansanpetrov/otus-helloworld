@@ -2,15 +2,13 @@ package ru.otus.sansanpetrov.homework7;
 
 public class Transport implements Travel {
     // Поля
-    private int fuel;
     private int distance;
-    private Terrain territory;
+    private int fuel;
 
     // Конструктор
-    public Transport(int fuel, int distance, Terrain territory) {
+    public Transport(int distance, int fuel) {
         this.fuel = fuel;
         this.distance = distance;
-        this.territory = territory;
     }
 
     // getters
@@ -22,18 +20,9 @@ public class Transport implements Travel {
         return distance;
     }
 
-    public Terrain getTerritory() {
-        return territory;
-    }
-
     // Методы
     @Override
-    public boolean moving(int fuel, int distance) {
-        return false;
-    }
-
-    @Override
-    public boolean terr(Terrain territory) {
+    public boolean moving(int distance, int fuel, Terrain territory) {
         return false;
     }
 }

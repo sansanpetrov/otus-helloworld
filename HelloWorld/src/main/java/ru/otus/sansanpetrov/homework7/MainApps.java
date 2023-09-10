@@ -3,33 +3,30 @@ package ru.otus.sansanpetrov.homework7;
 public class MainApps {
     public static void main(String[] args) {
         // Создаем объекты
-        Man man = new Man("Вася", "Машина");
-        Bicicle bicicle = new Bicicle(88, Terrain.DEEPFOREST);
-        Horse horse = new Horse(56, 56, Terrain.SWAMP);
-        Car car = new Car(100, 40, Terrain.DEEPFOREST);
-        AllTerrainVehicle allTerrainVehicle = new AllTerrainVehicle(70, 50, Terrain.SWAMP);
+        Man man = new Man("Вася", "Вездеход");
+        Bicycle bicycle = new Bicycle(88);
+        Horse horse = new Horse(56, 56);
+        Car car = new Car(40, 10);
+        AllTerrainVehicle allTerrainVehicle = new AllTerrainVehicle(50, 70);
 
-        // Пишем и выполняем методы
+        // Выполняем методы
 
-        man.change();
+        man.changeKindOfMoving();
+
         if (man.getCurrentTransport() == "Пешком") {
-            man.walk();
-        }
-        if (man.getCurrentTransport() == "Лошадь") {
-            horse.terr(horse.getTerritory());
-            horse.moving(horse.getForce(), horse.getDistance());
+            System.out.println(man.getName() + "успешно прошел нужное расстояние");
         }
         if (man.getCurrentTransport() == "Велосипед") {
-            bicicle.terr(bicicle.getTerritory());
-            bicicle.moving(bicicle.getDistance());
+            bicycle.moving(bicycle.getDistance(), Terrain.PLAIN);
+        }
+        if (man.getCurrentTransport() == "Лошадь") {
+            horse.moving(horse.getForce(), horse.getDistance(), Terrain.SWAMP);
         }
         if (man.getCurrentTransport() == "Машина") {
-            car.terr(car.getTerritory());
-            car.moving(car.getFuel(), car.getDistance());
+            car.moving(car.getFuel(), car.getDistance(), Terrain.DEEPFOREST);
         }
         if (man.getCurrentTransport() == "Вездеход") {
-            allTerrainVehicle.terr(allTerrainVehicle.getTerritory());
-            allTerrainVehicle.moving(allTerrainVehicle.getFuel(), allTerrainVehicle.getDistance());
+            allTerrainVehicle.moving(allTerrainVehicle.getFuel(), allTerrainVehicle.getDistance(), Terrain.SWAMP);
         }
     }
 }

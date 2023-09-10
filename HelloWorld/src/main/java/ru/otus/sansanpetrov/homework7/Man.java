@@ -27,8 +27,7 @@ public class Man {
 
     // Методы
     // Человек выбирает виды транспорта
-//    public void change(String name, String currentTransport)
-    public void change() {
+    public void changeKindOfMoving() {
         if (currentTransport == "Пешком") {
             System.out.println(name + " идет пешком");
         }
@@ -44,11 +43,5 @@ public class Man {
         if (currentTransport == "Вездеход") {
             System.out.println(name + " едет на вездеходе");
         }
-    }
-
-    // В случае, если человек идет пешком
-    public void walk() {
-        System.out.println("Можно пройти");
-        System.out.println("Сил хватит");
     }
 }

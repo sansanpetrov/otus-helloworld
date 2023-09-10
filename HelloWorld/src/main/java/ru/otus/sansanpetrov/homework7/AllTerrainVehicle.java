@@ -1,25 +1,18 @@
 package ru.otus.sansanpetrov.homework7;
 
 public class AllTerrainVehicle extends Transport {
-    public AllTerrainVehicle(int fuel, int distance, Terrain territory) {
-        super(fuel, distance, territory);
+    public AllTerrainVehicle(int fuel, int distance) {
+        super(fuel, distance);
     }
 
     // Методы
     @Override
-    public boolean moving(int fuel, int distance) {
+    public boolean moving(int fuel, int distance, Terrain territory) {
         if (fuel < distance) {
             System.out.println("Топлива на дистанцию нет");
-            return false;
-        } else {
-            System.out.println("Топлива на дистанцию хватило");
-            return true;
         }
-    }
-
-    @Override
-    public boolean terr(Terrain territory) {
-        System.out.println("Можно проехать");
+        System.out.println("Топлива на дистанцию хватило");
+        System.out.println("Везде проехал");
         return true;
     }
 }
