@@ -1,6 +1,6 @@
 package ru.otus.sansanpetrov.homework7;
 
-public class Bicycle {
+public class Bicycle implements Travel {
     private int distance;
 
     //Конструктор
@@ -14,9 +14,10 @@ public class Bicycle {
     }
 
     // Методы
+    @Override
     public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.SWAMP) {
-            System.out.println("Проехать нельзя");
+            System.out.println("Болото. Проехать нельзя");
         } else {
             System.out.println("Можно проехать");
         }

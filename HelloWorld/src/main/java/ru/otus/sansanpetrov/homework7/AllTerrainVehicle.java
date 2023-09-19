@@ -1,13 +1,27 @@
 package ru.otus.sansanpetrov.homework7;
 
-public class AllTerrainVehicle extends Transport {
+public class AllTerrainVehicle implements Travel {
+    private int fuel;
+    private int distance;
+
     public AllTerrainVehicle(int fuel, int distance) {
-        super(fuel, distance);
+        this.fuel = fuel;
+        this.distance = distance;
+    }
+    // getters
+
+
+    public int getFuel() {
+        return fuel;
+    }
+
+    public int getDistance() {
+        return distance;
     }
 
     // Методы
     @Override
-    public boolean moving(int fuel, int distance, Terrain territory) {
+    public boolean moving(int distance, Terrain territory) {
         if (fuel < distance) {
             System.out.println("Топлива на дистанцию нет");
         }

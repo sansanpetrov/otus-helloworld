@@ -21,16 +21,16 @@ public class Horse implements Travel {
 
     // Методы
     @Override
-    public boolean moving(int force, int distance, Terrain territory) {
+    public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.SWAMP) {
-            System.out.println("Проехать нельзя");
+            System.out.println(territory + "Проехать нельзя");
         } else {
             if (force < distance) {
                 System.out.println("Можно проехать");
-                System.out.println("Топлива на дистанцию нет");
+                System.out.println("Сил на дистанцию нет");
             } else {
                 System.out.println("Можно проехать");
-                System.out.println("Топлива на дистанцию хватило");
+                System.out.println("Сил на дистанцию хватило");
             }
         }
         return true;

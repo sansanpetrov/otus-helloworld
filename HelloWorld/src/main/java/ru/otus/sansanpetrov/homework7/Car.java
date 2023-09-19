@@ -1,14 +1,27 @@
 package ru.otus.sansanpetrov.homework7;
 
-public class Car extends Transport {
+public class Car implements Travel {
+    private int fuel;
+    private int distance;
+
     // Конструктор
     public Car(int fuel, int distance) {
-        super(fuel, distance);
+        this.fuel = fuel;
+        this.distance = distance;
+    }
+
+    //getters
+    public int getFuel() {
+        return fuel;
+    }
+
+    public int getDistance() {
+        return distance;
     }
 
     // Методы
     @Override
-    public boolean moving(int fuel, int distance, Terrain territory) {
+    public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.DEEPFOREST | territory == Terrain.SWAMP) {
             System.out.println("Проехать нельзя");
         } else {

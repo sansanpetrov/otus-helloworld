@@ -1,47 +1,71 @@
 package ru.otus.sansanpetrov.homework7;
 
+import java.util.regex.Pattern;
+
 public class Man {
     // Поля
     private String name;
-    private String currentTransport;
+    private Travel currentTransport;
+    private String nameTrans;
+
 
     // Конструктор
-    public Man(String name, String currentTransport) {
+    public Man(String name, Travel currentTransport) {
         this.name = name;
         this.currentTransport = currentTransport;
     }
 
-    // getters / setters
+    // getters
 
     public String getName() {
         return name;
     }
 
-    public String getCurrentTransport() {
+    public Travel getCurrentTransport() {
         return currentTransport;
     }
 
-    public void setCurrentTransport() {
-        this.currentTransport = currentTransport;
+    // Методы
+    // Очеловечиваем названия классов транспорта
+    public void namesTransport(Travel currentTransport) {
+        nameTrans = "";
+        if (currentTransport == null) {
+            return;
+        }
+        if (currentTransport != null) {
+            if (currentTransport.getClass().getName().equals("ru.otus.sansanpetrov.homework7.Bicycle")) {
+                nameTrans = "велосипед";
+            }
+            if (currentTransport.getClass().getName().equals("ru.otus.sansanpetrov.homework7.Car")) {
+                nameTrans = "машину";
+            }
+            if (currentTransport.getClass().getName().equals("ru.otus.sansanpetrov.homework7.Horse")) {
+                nameTrans = "лошадь";
+            }
+            if (currentTransport.getClass().getName().equals("ru.otus.sansanpetrov.homework7.AllTerrainVehicle")) {
+                nameTrans = "вездеход";
+            }
+        }
     }
 
-    // Методы
     // Человек выбирает виды транспорта
-    public void changeKindOfMoving() {
-        if (currentTransport == "Пешком") {
+    public void kindOfTransport(Travel transport) {
+        //     namesTransport(transport);
+        if (currentTransport == null) {
             System.out.println(name + " идет пешком");
+        } else {
+            namesTransport(transport);
+            System.out.println(name + " сел на " + nameTrans);
         }
-        if (currentTransport == "Велосипед") {
-            System.out.println(name + " едет на велосипеде");
-        }
-        if (currentTransport == "Лошадь") {
-            System.out.println(name + " едет на лошади");
-        }
-        if (currentTransport == "Машина") {
-            System.out.println(name + " едет на машине");
-        }
-        if (currentTransport == "Вездеход") {
-            System.out.println(name + " едет на вездеходе");
+    }
+
+    // Перемещаемся на расстояние
+    public void travellingMan(int distance, Terrain territory) {
+        if (currentTransport == null) {
+            System.out.println(name + " прошел дистанцию успешно");
+        } else {
+            currentTransport.moving(distance, territory);
         }
     }
 }
+
