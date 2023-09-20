@@ -6,17 +6,18 @@ public class Main {
 
     // Пункт 1
     // Строим ArrayList в указанном диапазоне
-    public static void minMax(int min, int max) {
+    public static List<Integer> minMax(int min, int max) {
         List<Integer> arrayMinMax = new ArrayList<>();
         for (int i = 0; i < (max - min + 1); i++) {
             arrayMinMax.add(i + min);
         }
         System.out.println(arrayMinMax);
+        return arrayMinMax;
     }
 
     // Пункт 2
     // Возвращаем сумму всех элементов ArrayList, которые больше 5
-    public static void moreThanFive(ArrayList<Integer> moreFive) {
+    public static int moreThanFive(ArrayList<Integer> moreFive) {
         int sum = 0;
         for (int i = 0; i < moreFive.size(); i++) {
             if (moreFive.get(i) > 5) {
@@ -24,24 +25,27 @@ public class Main {
             }
         }
         System.out.println("Сумма элементов, больших 5: " + sum);
+        return sum;
     }
 
     // Пункт 3
     // Переписываем ячейки ссылочного списка
-    public static void substArray(ArrayList<Integer> oneConstant, Integer b) {
+    public static List<Integer> substArray(ArrayList<Integer> oneConstant, Integer b) {
         for (int i = 0; i < oneConstant.size(); i++) {
             oneConstant.set(i, b);
         }
         System.out.println(oneConstant);
+        return oneConstant;
     }
 
     // Пункт 4
     // Увеличиваем значения ячеек ссылочного списка
-    public static void plusArray(ArrayList<Integer> plusConstant, Integer a) {
+    public static List<Integer> plusArray(ArrayList<Integer> plusConstant, Integer a) {
         for (int i = 0; i < plusConstant.size(); i++) {
             plusConstant.set(i, plusConstant.get(i) + a);
         }
         System.out.println(plusConstant);
+        return plusConstant;
     }
 
     public static void main(String[] args) {

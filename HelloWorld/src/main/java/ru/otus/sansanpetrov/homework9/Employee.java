@@ -1,6 +1,7 @@
 package ru.otus.sansanpetrov.homework9;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Employee {
     // Поля
@@ -24,51 +25,60 @@ public class Employee {
     }
 
     // Возвращаем список имен сотрудников
-    public static void nameEmployee(ArrayList<Employee> company) {
-        System.out.println(company);
+    public static List<String> nameEmployee(ArrayList<Employee> company) {
+        List<String> names = new ArrayList<>();
         System.out.println("Имена сотрудников:");
-        for (Employee n : company) {
-            System.out.println(n.getName());
+        for (Employee staff : company) {
+            names.add(staff.getName());
         }
+        System.out.println(names);
         System.out.println();
+        return names;
     }
 
     // Возвращаем список сотрудников, возраст которых больше или равен указанному значению
-    public static void moreAgeEmployee(ArrayList<Employee> company, Integer a) {
-        System.out.println("Имя сотрудника" + "     " + "Возраст");
-        for (Employee n : company) {
-            if (n.getAge() >= a) {
-                System.out.println(n.getName() + "         " + n.getAge());
+    public static ArrayList<String> moreAgeEmployee(ArrayList<Employee> company, Integer a) {
+        List<String> namesMoreThanAges = new ArrayList<>();
+        System.out.println("Cписок сотрудников, возраст которых больше или равен указанному значению:");
+        for (Employee staff : company) {
+            if (staff.getAge() >= a) {
+                namesMoreThanAges.add(staff.getName());
             }
         }
+        System.out.println(namesMoreThanAges);
         System.out.println();
+        return (ArrayList<String>) namesMoreThanAges;
     }
 
     // Сравниваем результат вычисления среднего возраста с минимальным значением
-    public static void averageAgeEmployee(ArrayList<Employee> company, Integer a) {
+    public static boolean averageAgeEmployee(ArrayList<Employee> company, Integer a) {
         Integer averageTemp = 0;
-        for (Employee n : company)
-            averageTemp += n.getAge();
+        for (Employee staff : company)
+            averageTemp += staff.getAge();
         if (averageTemp / company.size() >= a) {
             System.out.println("Средний возраст превышает указанный предел");
+            System.out.println();
+            return true;
         } else {
             System.out.println("Средний возраст не превышает указанный предел");
+            System.out.println();
+            return false;
         }
-        System.out.println();
     }
-
     // Возвращаем ссылку на самого молодого сотрудника
-    public static void yangestEmployee(ArrayList<Employee> company) {
-        Integer maxYear = 150;
-        String yangName = null;
-        for (Employee n : company) {
-            for (int i = 0; i < company.size(); i++) {
-                if (n.getAge() <= maxYear) {
-                    yangName = n.getName();
-                    maxYear = n.getAge();
-                }
+    public static List<Employee> yangestEmployee(ArrayList<Employee> company) {
+        List<Employee> yangest = new ArrayList<>();
+        Integer maxYear = company.get(0).getAge();
+        int index = 0;
+        for (int i = 0; i < company.size(); i++) {
+            if (company.get(i).getAge() <= maxYear) {
+                index = i;
             }
         }
-        System.out.println("Имя и возраст самого молодого сотрудника:" + yangName + " " + maxYear);
+        System.out.println("Имя и возраст самого молодого сотрудника: " + company.get(index).getName() + "  " + company.get(index).getAge());
+       yangest.add(company.get(index));
+       return yangest;
     }
 }
+
+
