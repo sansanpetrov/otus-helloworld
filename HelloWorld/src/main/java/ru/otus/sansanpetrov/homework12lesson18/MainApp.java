@@ -3,8 +3,11 @@ package ru.otus.sansanpetrov.homework12lesson18;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class MainApp {
+    //
     // Читаем файл
     public static void readFromFile(String file) throws java.io.FileNotFoundException {
         FileInputStream n1 = new FileInputStream(file);
@@ -38,13 +41,39 @@ public class MainApp {
     }
 
     // Выполняем пункты ДЗ:
-    public static void main(String[] args) throws FileNotFoundException {
-        String file = "src/main/java/ru/otus/sansanpetrov/homework12lesson18/files/test.txt";
-        String hello = "\nПривет, с Дем Рождения!!";
+    public static void main(String[] args) throws FileNotFoundException, InputMismatchException, IllegalStateException {
+        // Определяем каталог, содержимое которого будет выводиться в консоль:
+        String path = "src/main/java/ru/otus/sansanpetrov/homework12lesson18/files/";
+
+
+        // Выводим список файлов *.txt в каталоге:
+
+        // Выводим запрос на имя файла, с которым будем работать:
+        System.out.println("Пожалуйста введите имя файла и нажмите Enter:");
+        Scanner scannerName = new Scanner(System.in);
+        String fileName = scannerName.nextLine();
+
+        // Соединяем путь к каталогу и имя:
+        String file = path + fileName;
+        System.out.println(file);
+        System.out.println();
+
+        // Определяем фразу, которую добавляем в файл:
+        System.out.println("Пожалуйста введите фразу, которую запишете в файл, и нажмите Enter:");
+        Scanner phrase = new Scanner(System.in);
+        String enter = phrase.nextLine();
+        String hello = "\n" + enter;
+        System.out.println(hello);
+
+        // Читаем файл:
         readFromFile(file);
         System.out.println();
         System.out.println();
+
+        // Пишем в файл:
         writeInFile(hello, file);
+
+        // Читаем файл:
         readFromFile(file);
         System.out.println();
         System.out.println();
