@@ -1,13 +1,29 @@
 package ru.otus.sansanpetrov.homework12lesson18;
 
 
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class MainApp {
-    //
+    // Выводим список файлов .TXT в папке.
+    // Код взял отсюда и модифицировал:
+    // https://stackoverflow.com/questions/1844688/how-to-read-all-files-in-a-folder-from-java
+    public static void listFilesInFolder(String path) {
+        File tempDir = new File(path);
+        for (File fileEntry : tempDir.listFiles()) {
+            if (fileEntry.getName().lastIndexOf("txt") > 0) {
+                System.out.println(fileEntry.getName());
+            } else {
+            }
+        }
+        System.out.println();
+    }
+
     // Читаем файл
     public static void readFromFile(String file) throws java.io.FileNotFoundException {
         FileInputStream n1 = new FileInputStream(file);
@@ -26,7 +42,6 @@ public class MainApp {
 
     // Добавляем строчку в файл
     public static void writeInFile(String hello, String file) throws java.io.FileNotFoundException {
-        //     String hello = "Привет, С Днюхой 555!!";
         FileOutputStream out1 = new FileOutputStream(file, true);
         BufferedOutputStream out = new BufferedOutputStream(out1);
         try (out) {
@@ -47,15 +62,21 @@ public class MainApp {
 
 
         // Выводим список файлов *.txt в каталоге:
+        listFilesInFolder(path);
 
         // Выводим запрос на имя файла, с которым будем работать:
         System.out.println("Пожалуйста введите имя файла и нажмите Enter:");
         Scanner scannerName = new Scanner(System.in);
         String fileName = scannerName.nextLine();
 
+
         // Соединяем путь к каталогу и имя:
         String file = path + fileName;
-        System.out.println(file);
+        System.out.println();
+
+        // Выводим содержимое выбранного файла в консоль:
+        readFromFile(file);
+        System.out.println();
         System.out.println();
 
         // Определяем фразу, которую добавляем в файл:
@@ -64,11 +85,6 @@ public class MainApp {
         String enter = phrase.nextLine();
         String hello = "\n" + enter;
         System.out.println(hello);
-
-        // Читаем файл:
-        readFromFile(file);
-        System.out.println();
-        System.out.println();
 
         // Пишем в файл:
         writeInFile(hello, file);
