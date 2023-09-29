@@ -24,14 +24,13 @@ public class Car implements Travel {
     public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.DEEPFOREST | territory == Terrain.SWAMP) {
             System.out.println("Проехать нельзя");
+        }
+        if (fuel < distance) {
+            System.out.println("Можно проехать");
+            System.out.println("Топлива на дистанцию нет");
         } else {
-            if (fuel < distance) {
-                System.out.println("Можно проехать");
-                System.out.println("Топлива на дистанцию нет");
-            } else {
-                System.out.println("Можно проехать");
-                System.out.println("Топлива на дистанцию хватило");
-            }
+            System.out.println("Можно проехать");
+            System.out.println("Топлива на дистанцию хватило");
         }
         return true;
     }

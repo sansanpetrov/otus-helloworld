@@ -24,7 +24,7 @@ public class Horse implements Travel {
     public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.SWAMP) {
             System.out.println(territory + "Проехать нельзя");
-        } else {
+        }
             if (force < distance) {
                 System.out.println("Можно проехать");
                 System.out.println("Сил на дистанцию нет");
@@ -32,7 +32,6 @@ public class Horse implements Travel {
                 System.out.println("Можно проехать");
                 System.out.println("Сил на дистанцию хватило");
             }
-        }
         return true;
     }
 }

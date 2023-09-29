@@ -18,9 +18,8 @@ public class Bicycle implements Travel {
     public boolean moving(int distance, Terrain territory) {
         if (territory == Terrain.SWAMP) {
             System.out.println("Болото. Проехать нельзя");
-        } else {
-            System.out.println("Можно проехать");
         }
+            System.out.println("Можно проехать");
         return true;
     }
 }
