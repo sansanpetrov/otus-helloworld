@@ -6,7 +6,7 @@ public class MainApps {
         Travel device;  // Далее присваиваем вид транспорта
         Travel car = new Car(100, 120);
         Travel bicycle = new Bicycle(200);
-        Travel horse = new Horse(55, 30);
+        Travel horse = new Horse(150, 30);
         Travel allTerrainVehicle = new AllTerrainVehicle(150, 120);
 //        device = null; // Идем пешком
 //        device = car; // Едем на машине
