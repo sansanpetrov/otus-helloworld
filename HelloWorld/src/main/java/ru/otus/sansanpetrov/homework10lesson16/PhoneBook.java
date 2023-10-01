@@ -1,5 +1,6 @@
 package ru.otus.sansanpetrov.homework10lesson16;
 
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,11 +10,12 @@ public class PhoneBook {
     private String fullName;
     private ArrayList<String> phoneList;
     private String phoneNumber;
-    private HashMap<String, ArrayList<String>> contacts;
+    private HashMap<String, ArrayList<String>> contacts = new HashMap<>();
+
 
     // Конструктор
 
-    public PhoneBook(HashMap<String, ArrayList<String>> contacts) {
+    public PhoneBook() {
         this.contacts = contacts;
     }
 
@@ -56,25 +58,35 @@ public class PhoneBook {
         ArrayList<String> listNew = new ArrayList<>();
         // Проверяем, есть ли запись
         if (contacts.containsKey(fullName)) {
-            System.out.println("Такое имя уже есть. Добавляю новый телефон для нее.");
+            System.out.println("Такое имя уже есть. Пробую добавить номер.");
             listNew = contacts.get(fullName);
+            if (listNew.contains(phoneNumber)) {
+                System.out.println("Такой номер телефона уже есть. Добавление не нужно.");
+            } else {
+                System.out.println("Новый номер добавлен.");
+                listNew.add(phoneNumber);
+                contacts.put(fullName, listNew);
+            }
+        } else { // Добавляем запись, если отсутствует
+            System.out.println("Добавил новую запись в телефонную книгу.");
             listNew.add(phoneNumber);
             contacts.put(fullName, listNew);
-        } // Добавляем запись, если отсутствует
-        System.out.println("Добавил новую запись в телефонную книгу.");
-        listNew.add(phoneNumber);
-        contacts.put(fullName, listNew);
+        }
     }
 
     // Выполняем поиск номеров по имени
-    public void find(String fullName) {
-        contacts.get(fullName);
+    public ArrayList<String> find(String fullName) {
+        return contacts.get(fullName);
     }
+
     // Проверяем наличие телефона в справочнике
-//    public void containsPhoneNumber(String phoneNumber) {
-//        for (contacts.get():
-//             ) {
-//
-//        }
-//    }
+    public void containsPhoneNumber(String phoneNumber) {
+        ArrayList<String> listNew = new ArrayList<>();
+        for (String  fullName : contacts.keySet()) {
+            listNew = contacts.get(fullName);
+            if (listNew.contains(phoneNumber)) {
+                System.out.println("Имя контакта, у которого найден данный номер: " + fullName);
+            }
+        }
+    }
 }
