@@ -1,6 +1,7 @@
 package ru.otus.sansanpetrov.homework10lesson16;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 
@@ -14,9 +15,9 @@ public class PhoneBook {
 
     // Конструктор
 
-//    public PhoneBook() {
-//        this.contacts = contacts;
-//    }
+    public PhoneBook() {
+        HashMap<String, ArrayList<String>> contacts = new HashMap<>();
+    }
 
     // Getters / setters
 //    public String getFullName() {
@@ -41,13 +42,11 @@ public class PhoneBook {
         // Проверяем, есть ли запись
         if (contacts.containsKey(fullName)) {
             System.out.println("Такое имя уже есть. Пробую добавить номер.");
-            ArrayList<String> listNew = contacts.get(fullName);
-            if (listNew.contains(phoneNumber)) {
+            if (contacts.get(fullName).contains(phoneNumber)) {
                 System.out.println("Такой номер телефона уже есть. Добавление не нужно.");
             } else {
                 System.out.println("Новый номер добавлен.");
-                listNew.add(phoneNumber);
-                //      contacts.put(fullName, listNew);
+                contacts.get(fullName).add(phoneNumber);
             }
         } else { // Добавляем запись, если отсутствует
             System.out.println("Добавил новую запись в телефонную книгу.");
