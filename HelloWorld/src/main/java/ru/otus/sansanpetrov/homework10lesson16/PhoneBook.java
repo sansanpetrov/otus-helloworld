@@ -12,6 +12,10 @@ public class PhoneBook {
 //    private String phoneNumber; // Телефон, который будем добавлять к списку или вместе с новой записью
     private HashMap<String, ArrayList<String>> contacts = new HashMap<>(); // Массив ФИО и соответствующего списка телефонов
 
+    // HashMap<String, ArrayList> -> "Map<String, List>" - можно так (из комментариев Михаила)
+    //вспомни про интерфейсы
+    //у листа тип стринг указываем просто гит не отображает то что я указал тебе в примере
+
 
     // Конструктор
 
