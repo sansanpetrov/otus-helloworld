@@ -1,42 +1,22 @@
 package ru.otus.sansanpetrov.homework10lesson16;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class PhoneBook {
     // Поля
-//    private String fullName; // ФИО, ключ для HashMap
-//    private ArrayList<String> phoneList; // Список телефонов для одного ФИО (ключа)
-//    private String phoneNumber; // Телефон, который будем добавлять к списку или вместе с новой записью
-    private HashMap<String, ArrayList<String>> contacts = new HashMap<>(); // Массив ФИО и соответствующего списка телефонов
+    private Map<String, List<String>> contacts; // Массив ФИО и соответствующего списка телефонов
 
-    // HashMap<String, ArrayList> -> "Map<String, List>" - можно так (из комментариев Михаила)
-    //вспомни про интерфейсы
-    //у листа тип стринг указываем просто гит не отображает то что я указал тебе в примере
-
-
-    // Конструктор
-
-    public PhoneBook() {
-        HashMap<String, ArrayList<String>> contacts = new HashMap<>();
-    }
+//    // Конструктор
+//    public PhoneBook() {
+//        this.contacts = new HashMap<>(); // Делаем так!
+//    }
 
     // Getters / setters
-//    public String getFullName() {
-//        return fullName;
-//    }
-//
-//    public ArrayList<String> getPhoneList() {
-//        return phoneList;
-//    }
-//
-//    public String getPhoneNumber() {
-//        return phoneNumber;
-//    }
-//
-    public HashMap<String, ArrayList<String>> getContacts() {
+    public Map<String, List<String>> getContacts() {
         return contacts;
     }
 
@@ -61,7 +41,7 @@ public class PhoneBook {
     }
 
     // Выполняем поиск номеров по имени
-    public ArrayList<String> find(String fullName) {
+    public List<String> find(String fullName) {
         return contacts.get(fullName);
     }
 
