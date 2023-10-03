@@ -1,74 +1,57 @@
 package ru.otus.sansanpetrov.homework10lesson16;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class PhoneBook {
     // Поля
-    private String fullName;
-    private ArrayList<String> phoneList;
-    private String phoneNumber;
-    private HashMap<String, ArrayList<String>> contacts = new HashMap<>();
+//    private String fullName; // ФИО, ключ для HashMap
+//    private ArrayList<String> phoneList; // Список телефонов для одного ФИО (ключа)
+//    private String phoneNumber; // Телефон, который будем добавлять к списку или вместе с новой записью
+    private HashMap<String, ArrayList<String>> contacts = new HashMap<>(); // Массив ФИО и соответствующего списка телефонов
 
 
     // Конструктор
 
-    public PhoneBook() {
-        this.contacts = contacts;
-    }
+//    public PhoneBook() {
+//        this.contacts = contacts;
+//    }
 
     // Getters / setters
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public ArrayList<String> getPhoneList() {
-        return phoneList;
-    }
-
-    public void setPhoneList(ArrayList<String> phoneList) {
-        this.phoneList = phoneList;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
+//    public String getFullName() {
+//        return fullName;
+//    }
+//
+//    public ArrayList<String> getPhoneList() {
+//        return phoneList;
+//    }
+//
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
     public HashMap<String, ArrayList<String>> getContacts() {
         return contacts;
     }
 
-    public void setContacts(HashMap<String, ArrayList<String>> contacts) {
-        this.contacts = contacts;
-    }
-
     // Main methods
-    // Добавляем запись имя- телефон (один!). Не проверяем, есть ли уже этот телефон или нет.
+    // Добавляем запись имя- телефон (один!).
     public void add(String fullName, String phoneNumber) {
-        ArrayList<String> listNew = new ArrayList<>();
         // Проверяем, есть ли запись
         if (contacts.containsKey(fullName)) {
             System.out.println("Такое имя уже есть. Пробую добавить номер.");
-            listNew = contacts.get(fullName);
+            ArrayList<String> listNew = contacts.get(fullName);
             if (listNew.contains(phoneNumber)) {
                 System.out.println("Такой номер телефона уже есть. Добавление не нужно.");
             } else {
                 System.out.println("Новый номер добавлен.");
                 listNew.add(phoneNumber);
-                contacts.put(fullName, listNew);
+                //      contacts.put(fullName, listNew);
             }
         } else { // Добавляем запись, если отсутствует
             System.out.println("Добавил новую запись в телефонную книгу.");
+            ArrayList<String> listNew = new ArrayList<>();
             listNew.add(phoneNumber);
             contacts.put(fullName, listNew);
         }
@@ -80,13 +63,14 @@ public class PhoneBook {
     }
 
     // Проверяем наличие телефона в справочнике
-    public void containsPhoneNumber(String phoneNumber) {
-        ArrayList<String> listNew = new ArrayList<>();
-        for (String  fullName : contacts.keySet()) {
-            listNew = contacts.get(fullName);
-            if (listNew.contains(phoneNumber)) {
-                System.out.println("Имя контакта, у которого найден данный номер: " + fullName);
+    public boolean containsPhoneNumber(String phoneNumber) {
+        for (String fullName : contacts.keySet()) {
+            if (contacts.get(fullName).contains(phoneNumber)) {
+                System.out.println("Телефон " + phoneNumber + " есть в справочнике.");
+                return true;
             }
         }
+        return false;
     }
 }
+
