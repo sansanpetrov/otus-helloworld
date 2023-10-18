@@ -20,6 +20,7 @@ public class Client {
             Float string1 = scanner1.nextFloat();
             System.out.println(string1);
             out.write(string1.toString() + "\n");
+            out.flush(); // Этой строки нехватало. Все из-за того, что используем BufferedWriter
 //            // Получаем приглашение ввести второе число и отправляем его:
 //            String str2 = in.readLine().trim();
 //            System.out.println(str2);
