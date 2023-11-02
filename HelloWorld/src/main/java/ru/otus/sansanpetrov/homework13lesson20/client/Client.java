@@ -18,31 +18,27 @@ public class Client {
             System.out.println(str1);
             Scanner scanner1 = new Scanner(System.in);
             Float string1 = scanner1.nextFloat();
-            System.out.println(string1);
-            out.write(string1.toString() + "\n");
-            out.flush(); // Этой строки нехватало. Все из-за того, что используем BufferedWriter
-//            // Получаем приглашение ввести второе число и отправляем его:
-//            String str2 = in.readLine().trim();
-//            System.out.println(str2);
-//            Scanner scanner2 = new Scanner(System.in);
-//            Float string2 = scanner2.nextFloat();
-//            out.write(string2.toString());
-//            // Получаем приглашение ввести знак операции и отправляем его:
-//            String str3 = in.readLine().trim();
-//            System.out.println(str3);
-//            Scanner scanner3 = new Scanner(System.in);
-//            String string3 = scanner3.nextLine();
-//            out.write(string3);
-//            // Получаем ответ:
-//            String str4 = in.readLine().trim();
-//            System.out.println(str4);
+            out.write(string1 + "\n");
+            out.flush();
+            // Получаем приглашение ввести второе число и отправляем его:
+            String str2 = in.readLine().trim();
+            System.out.println(str2);
+            Scanner scanner2 = new Scanner(System.in);
+            Float string2 = scanner2.nextFloat();
+            out.write(string2 + "\n");
+            out.flush();
+            // Получаем приглашение ввести знак операции и отправляем его:
+            String str3 = in.readLine().trim();
+            System.out.println(str3);
+            Scanner scanner3 = new Scanner(System.in);
+            String string3 = scanner3.nextLine();
+            out.write(string3 + "\n");
+            out.flush();
+            // Получаем ответ:
+            String str4 = in.readLine().trim();
+            System.out.println(str4);
         }
     }
 }
 
-//    @Override
-//    public void close() throws Exception {
-//        in.close();
-//        out.close();
-//    }
 

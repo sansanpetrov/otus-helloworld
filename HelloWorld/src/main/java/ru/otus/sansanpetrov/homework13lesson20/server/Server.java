@@ -22,45 +22,50 @@ public class Server {
         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
         out.write("Сетевой калькулятор может вычислять следующие математические операции: +,-,*,/" + "\n");
         out.flush();
-//        while (true) {
         out.write("Введите первое число: " + "\n");
         out.flush();
-//        number = listener.readLine().trim();
-         number = listener.readLine();
+        number = listener.readLine().trim();
         System.out.println(number);
-//        Float number1 = Float.valueOf(number);
-
-//            out.write("Введите второе число: " + "\n");
-//            out.flush();
-//            number = listener.readLine().trim();
-//            System.out.println(number);
-//            Float number2 = Float.valueOf(number);
-//
-//            String operation = listener.readLine();
-//            System.out.println(operation);
-//            while (operation == null || operation.trim().isEmpty()) {
-//                out.write("Пожалуйста введите знак операции " + "\n");
-//                out.flush();
-//                break;
-//            }
-//            if (operation.equals("+")) {
-//                result = number1 + number2;
-//                out.write(result.toString());
-//            }
-//            if (operation.equals("-")) {
-//                result = number1 - number2;
-//                out.write(result.toString());
-//            }
-//            if (operation.equals("*")) {
-//                result = number1 * number2;
-//                out.write(result.toString());
-//            }
-//            if (operation.equals("/")) {
-//                result = number1 / number2;
-//                out.write(result.toString());
-//            } else {
-//                System.out.println("Неправильный знак операции" + "\n");
-//            }
-        //       }
+        Float number1 = Float.valueOf(number);
+        out.write("Введите второе число: " + "\n");
+        out.flush();
+        number = listener.readLine().trim();
+        System.out.println(number);
+        Float number2 = Float.valueOf(number);
+            out.write("Пожалуйста введите знак операции " + "\n");
+            out.flush();
+            String operation = listener.readLine().trim();
+            System.out.println(operation);
+            if (operation.equals("+")) {
+                result = number1 + number2;
+                out.write(result + "\n");
+                out.flush();
+            }
+            if (operation.equals("-")) {
+                result = number1 - number2;
+                out.write(result + "\n");
+                out.flush();
+            }
+            if (operation.equals("*")) {
+                result = number1 * number2;
+                out.write(result + "\n");
+                out.flush();
+            }
+            if (operation.equals("/")) {
+                if (number2 != 0.0f) {
+                    result = number1 / number2;
+                    out.write(result + "\n");
+                    out.flush();
+                } else {
+                    out.write("Делить на ноль нельзя!" + "\n");
+                    out.flush();
+                }
+            } else {
+                out.write("Неправильный знак операции" + "\n");
+                out.flush();
+            }
+        }
     }
-}
+
+
+
