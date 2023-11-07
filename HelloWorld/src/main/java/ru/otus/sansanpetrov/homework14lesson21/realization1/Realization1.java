@@ -1,29 +1,13 @@
 package ru.otus.sansanpetrov.homework14lesson21.realization1;
 
+import ru.otus.sansanpetrov.homework14lesson21.math.Calculation;
+
+import java.util.Arrays;
+
 public class Realization1 {
-    public static void main(String[] args) throws InterruptedException {
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
-        t.setDaemon(true);
-        t.start();
-        t.join();
-
+    public static void main(String[] args) {
         long time = System.currentTimeMillis();
-        System.out.println(System.currentTimeMillis() - time);
-    }
-    public synchronized void inc() {
-
-        for (int i = 0; i < 10; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(10);
-                }
-            }).start();
-        }
+        System.out.println(Arrays.toString(Calculation.fillMassive(1_000_000)));
+        System.out.println("Задача выполнена за " + (System.currentTimeMillis() - time) + " миллисекунд");
     }
 }

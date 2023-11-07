@@ -24,10 +24,10 @@ public class Calculation {
         }
         return array;
     }
-
+/*
     public static void main(String[] args) {
         long time = System.currentTimeMillis();
         System.out.println(Arrays.toString(fillMassive(1_000_000)));
         System.out.println("Задача выполнена за " + (System.currentTimeMillis() - time) + " миллисекунд");
-    }
+    }*/
 }
