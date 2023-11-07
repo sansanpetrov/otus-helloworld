@@ -13,10 +13,6 @@ public class Calculation {
         return numberOfElements;
     }
 
-    public void setNumberOfElements(int numberOfElements) {
-        this.numberOfElements = numberOfElements;
-    }
-
     public static double[] fillMassive(int numberOfElements) {
         double[] array = new double[numberOfElements];
         for (int i = 0; i < numberOfElements; i++) {

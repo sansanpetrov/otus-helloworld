@@ -8,7 +8,7 @@ public class Realization1 {
     public static void main(String[] args) {
         long time = System.currentTimeMillis();
 //        System.out.println(Arrays.toString(Calculation.fillMassive(1_000_000)));
-        Calculation.fillMassive(1_000_000);
+        Calculation.fillMassive(100_000_000);
         System.out.println("Задача выполнена за " + (System.currentTimeMillis() - time) + " миллисекунд");
     }
 }
