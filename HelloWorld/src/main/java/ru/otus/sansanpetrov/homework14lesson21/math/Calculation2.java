@@ -16,7 +16,7 @@ public class Calculation2 {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < (numberOfElements / 4) - 1; i++) {
+                for (int i = 0; i < numberOfElements / 4; i++) {
                     array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
 //                    array[i] = 0.0;
                 }
@@ -33,7 +33,7 @@ public class Calculation2 {
         Thread t3 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = numberOfElements / 2; i < (numberOfElements * 3 / 4) - 1; i++) {
+                for (int i = numberOfElements / 2; i < numberOfElements * 3 / 4; i++) {
                     array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
 //                    array[i] = 0.0;
                 }
